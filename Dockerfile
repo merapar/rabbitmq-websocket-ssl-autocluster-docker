@@ -14,7 +14,4 @@ RUN rabbitmq-plugins enable rabbitmq_shovel rabbitmq_shovel_management rabbitmq_
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-RUN mkdir /rabbitmq_mnesia
-RUN chmod 777 /rabbitmq_mnesia
-
 ENTRYPOINT ["/run.sh"]
