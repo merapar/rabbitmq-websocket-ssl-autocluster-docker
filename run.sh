@@ -4,6 +4,9 @@ sed -i -e "s/{{CUSTOM_DEFAULT_PASSWORD}}/$CUSTOM_DEFAULT_PASSWORD/g" /etc/rabbit
 
 chmod 777 /rabbitmq_mnesia
 
+# Give kube-dns some time, otherwise rabbitmq-0.rabbitmq cannot be resolved when starting rabbitmq
+sleep 5
+
 docker-entrypoint.sh rabbitmq-server &
 rabbitMQ=$!
 echo 'Sleeping, awaiting for RabbitMQ to have completely started'
