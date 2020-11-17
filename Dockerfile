@@ -1,7 +1,5 @@
-FROM rabbitmq:3.6.6-management-alpine
+FROM rabbitmq:3.8.9-management-alpine
 MAINTAINER Merapar
-
-RUN apk --update add bash coreutils curl erlang erlang-asn1 erlang-crypto erlang-eldap erlang-erts erlang-inets erlang-mnesia erlang-os-mon erlang-public-key erlang-sasl erlang-ssl erlang-syntax-tools erlang-xmerl xz
 
 COPY rabbitmq-env.conf /etc/rabbitmq/rabbitmq-env.conf
 COPY rabbitmq.config /etc/rabbitmq/rabbitmq.config
